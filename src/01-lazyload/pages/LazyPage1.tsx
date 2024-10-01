@@ -1,5 +1,6 @@
-const LazyPage1 = () => {
+const Component = () => {
   return <div>LazyPage1</div>;
 };
 
-export { LazyPage1 };
+export { Component };
+export default Component;
