@@ -11,7 +11,7 @@ const Root = () => {
         <ul className="py-4 px-2">
           <li className="w-full py-2 hover:bg-slate-500 rounded-xl hover:bg-opacity-50">
             <NavLink
-              to={"lazy1"}
+              to={"shopping"}
               className={({ isActive, isPending }: NavLinkRenderProps) =>
                 isActive
                   ? "nav-active"
