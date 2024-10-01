@@ -7,6 +7,7 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import Root from "./routes/Root";
+import { LazyPage1, LazyPage2, LazyPage3 } from "./01-lazyload/pages";
 
 const router = createBrowserRouter([
   {
@@ -14,12 +15,16 @@ const router = createBrowserRouter([
     element: <Root />,
     children: [
       {
-        path: "about",
-        element: <p>about</p>,
+        path: "lazy1",
+        element: <LazyPage1 />,
       },
       {
-        path: "users",
-        element: <p className="text-white text-5xl">users</p>,
+        path: "lazy2",
+        element: <LazyPage2 />,
+      },
+      {
+        path: "lazy3",
+        element: <LazyPage3 />,
       },
     ],
   },

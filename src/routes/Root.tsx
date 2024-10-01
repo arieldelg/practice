@@ -11,7 +11,7 @@ const Root = () => {
         <ul className="py-4 px-2">
           <li className="w-full py-2 hover:bg-slate-500 rounded-xl hover:bg-opacity-50">
             <NavLink
-              to={"/"}
+              to={"lazy1"}
               className={({ isActive, isPending }: NavLinkRenderProps) =>
                 isActive
                   ? "nav-active"
@@ -20,12 +20,12 @@ const Root = () => {
                   : "inline-block w-full h-full"
               }
             >
-              Home
+              Lazy 1
             </NavLink>
           </li>
           <li className="w-full py-2 hover:bg-slate-500 rounded-xl hover:bg-opacity-50">
             <NavLink
-              to={"about"}
+              to={"lazy2"}
               className={({ isActive, isPending }: NavLinkRenderProps) =>
                 isActive
                   ? "nav-active "
@@ -34,12 +34,12 @@ const Root = () => {
                   : "inline-block w-full h-full"
               }
             >
-              About
+              Lazy 2
             </NavLink>
           </li>
           <li className="w-full py-2 hover:bg-slate-500 rounded-xl hover:bg-opacity-50">
             <NavLink
-              to={"users"}
+              to={"lazy3"}
               className={({ isActive, isPending }: NavLinkRenderProps) =>
                 isActive
                   ? "nav-active "
@@ -48,12 +48,14 @@ const Root = () => {
                   : "inline-block w-full h-full"
               }
             >
-              users
+              Lazy 3
             </NavLink>
           </li>
         </ul>
       </nav>
-      <Outlet />
+      <div className="p-8">
+        <Outlet />
+      </div>
     </header>
   );
 };
