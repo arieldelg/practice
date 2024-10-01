@@ -13,9 +13,6 @@ const ShoppingPage = () => {
         }}
       >
         <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
       </div>
     </section>
   );
