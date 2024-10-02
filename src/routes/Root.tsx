@@ -20,7 +20,7 @@ const Root = () => {
                   : "inline-block w-full h-full"
               }
             >
-              Lazy 1
+              Shopping
             </NavLink>
           </li>
           <li className="w-full py-2 hover:bg-slate-500 rounded-xl hover:bg-opacity-50">

@@ -2,12 +2,12 @@ import { useContext } from "react";
 import { ProductContext } from "./ProductCard";
 import styles from "../styles/styles.module.css";
 
-const ProductButtons = () => {
+const ProductButtons = ({ className }: { className?: string }) => {
   const { counter, handleCounter } = useContext(ProductContext);
   return (
-    <div className={styles.buttonsContainer}>
+    <div className={`${className} ${styles.buttonsContainer} after:bg-red-400`}>
       <button
-        className={styles.buttonMinus}
+        className={`bg-red-300 ${styles.buttonMinus}`}
         onClick={() => handleCounter("minus")}
       >
         -

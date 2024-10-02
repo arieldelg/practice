@@ -1,6 +1,7 @@
 export interface ProductCardProps {
   children?: React.ReactNode;
   products: Product;
+  className?: string;
 }
 
 export interface Product {
