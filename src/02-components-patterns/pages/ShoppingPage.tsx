@@ -1,17 +1,45 @@
+import { useState } from "react";
 import {
   ProductButtons,
   ProductCard,
-  ProductCardNew,
   ProductImg,
   ProductTitle,
 } from "../components";
+import styles from "../styles/styles.module.css";
+import { OnChangeProps, ProductsInfo } from "../interface/interfaces";
 
-const products = {
+const products1: ProductsInfo = {
   img: "./coffee-mug.png",
   title: "Coffe-Mug",
+  id: "1",
 };
 
+const products2: ProductsInfo = {
+  img: "./coffee-mug2.png",
+  title: "Coffe-Mug2",
+  id: "2",
+};
+
+const products: ProductsInfo[] = [products1, products2];
+
 const ShoppingPage = () => {
+  const [shoppingCart, setShoppingCart] = useState<{
+    [key: string]: OnChangeProps;
+  }>({});
+
+  const handleChange = (id: string, event: OnChangeProps) => {
+    if (event.count === 0 && shoppingCart) {
+      delete shoppingCart[id];
+      return setShoppingCart((prev) => ({
+        ...prev,
+      }));
+    }
+    setShoppingCart((prev) => ({
+      ...prev,
+      [id]: event,
+    }));
+  };
+
   return (
     <section>
       <h1>Shopping Page</h1>
@@ -24,25 +52,33 @@ const ShoppingPage = () => {
           gap: "10px",
         }}
       >
-        {/* method 1 */}
-        <ProductCard
-          products={products}
-          className="ring-4 ring-red-300 bg-gray-500 w-full h-[19rem]"
-        >
-          <ProductCardNew.Image />
-          <ProductCardNew.Title className="text-white" />
-          <ProductCardNew.Buttons />
-        </ProductCard>
-
+        {products.map((product) => (
+          <ProductCard
+            key={product.id}
+            product={product}
+            className="bg-gray-700 ring-white ring-2 h-[22rem] flex flex-col justify-between"
+            onChange={(event) => handleChange(product.id, event)}
+          >
+            <ProductImg className="h-3/4 w-full" />
+            <ProductTitle className="text-white" />
+            <ProductButtons className="text-white flex flex-row pb-2 px-2" />
+          </ProductCard>
+        ))}
         {/* method 2 */}
-        <ProductCard
-          products={products}
-          className="bg-gray-700 ring-white ring-2 "
-        >
-          <ProductImg />
-          <ProductTitle className="text-white" />
-          <ProductButtons className="text-white " />
-        </ProductCard>
+      </div>
+
+      <div className="absolute top-8 right-4 flex flex-col items-center gap-2">
+        {Object.entries(shoppingCart).map(([key, product]) => (
+          <ProductCard
+            key={key}
+            product={product.product}
+            className="bg-gray-700 w-24 h-32 flex flex-col justify-between ring-2 ring-white"
+            onChange={(event) => handleChange(products1.id, event)}
+          >
+            <ProductImg className={`w-full h-2/4 ${styles.image}`} />
+            <ProductButtons className="text-white flex flex-row justify-center w-full h-auto pb-2" />
+          </ProductCard>
+        ))}
       </div>
     </section>
   );

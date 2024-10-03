@@ -6,11 +6,19 @@ import { ProductCardProps, ProductContextProps } from "../interface/interfaces";
 export const ProductContext = createContext({} as ProductContextProps);
 const { Provider } = ProductContext;
 
-const ProductCard = ({ children, products, className }: ProductCardProps) => {
-  const { counter, handleCounter } = useProduct();
+const ProductCard = ({
+  children,
+  product,
+  className = "w-64",
+  onChange,
+}: ProductCardProps) => {
+  const { counter, handleCounter } = useProduct({ onChange, product });
 
+  if (!className.includes("w-")) className = className + " w-64 rounded-md";
+  if (!className.includes("rounded-"))
+    className = className + " w-64 rounded-md";
   return (
-    <Provider value={{ counter, handleCounter, products }}>
+    <Provider value={{ counter, handleCounter, product }}>
       <div className={`${className} ${styles.productCard}`}>{children}</div>
     </Provider>
   );

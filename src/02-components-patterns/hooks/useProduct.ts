@@ -1,18 +1,31 @@
 import { useState } from "react";
+import { OnChangeProps, ProductsInfo } from "../interface/interfaces";
 
-const useProduct = (): {
+interface Props {
+  onChange?: (value: OnChangeProps) => void;
+  product: ProductsInfo;
+}
+
+const useProduct = ({
+  onChange,
+  product,
+}: Props): {
   counter: number;
-  handleCounter: (value: string) => void;
+  handleCounter: (type: string) => void;
 } => {
   const [counter, setCounter] = useState<number>(0);
 
   const handleCounter = (type: string) => {
     switch (type) {
       case "add":
-        setCounter((prev) => prev + 1);
+        setCounter(Math.max(counter + 1, 0));
+        if (counter + 1 < 0) return;
+        if (onChange) onChange({ product, count: Math.max(counter + 1, 0) });
         break;
       case "minus":
-        setCounter((prev) => Math.max(prev - 1, 0));
+        setCounter(Math.max(counter - 1, 0));
+        if (counter - 1 < 0) return;
+        if (onChange) onChange({ product, count: Math.max(counter - 1, 0) });
         break;
       default:
         break;

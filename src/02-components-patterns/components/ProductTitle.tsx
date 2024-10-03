@@ -9,10 +9,10 @@ const ProductTitle = ({
   title?: string;
   className?: string;
 }) => {
-  const { products } = useContext(ProductContext);
+  const { product } = useContext(ProductContext);
   let titleContext;
 
-  if (products.title) titleContext = products.title;
+  if (product.title) titleContext = product.title;
   else titleContext = title;
 
   return (

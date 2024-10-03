@@ -1,7 +1,6 @@
 import { useContext } from "react";
 import noImage from "../assets/no-image.jpg";
 import { ProductContext } from "./ProductCard";
-import styles from "../styles/styles.module.css";
 
 interface Props {
   img?: string;
@@ -9,18 +8,20 @@ interface Props {
 }
 
 const ProductImg = ({ img = "", className }: Props) => {
-  const { products } = useContext(ProductContext);
+  const { product } = useContext(ProductContext);
   let imgProduct;
-  if (products.img) imgProduct = products.img;
+  if (product.img) imgProduct = product.img;
   else if (img) imgProduct = img;
   else imgProduct = noImage;
 
   return (
-    <img
-      src={imgProduct}
-      alt="coffe mug"
-      className={`${className} ${styles.productImg}`}
-    />
+    <div className={`${className}`}>
+      <img
+        src={imgProduct}
+        alt="coffe mug"
+        className={` object-cover w-full h-full rounded-t-md`}
+      />
+    </div>
   );
 };
 
