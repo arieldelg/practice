@@ -40,8 +40,6 @@ const useProduct = ({
         setCounter(Math.max(counter - 1, 0));
         if (counter - 1 < 0) return;
 
-        //? Eliminar condicional, ya que utilizo uno arriba
-        if (onChange) onChange({ product, count: Math.max(counter - 1, 0) });
         break;
       default:
         break;
