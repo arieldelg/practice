@@ -25,7 +25,7 @@ const Root = () => {
           </li>
           <li className="w-full py-2 hover:bg-slate-500 rounded-xl hover:bg-opacity-50">
             <NavLink
-              to={"lazy2"}
+              to={"customFormik"}
               className={({ isActive, isPending }: NavLinkRenderProps) =>
                 isActive
                   ? "nav-active "

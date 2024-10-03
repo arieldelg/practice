@@ -20,7 +20,7 @@ const router = createBrowserRouter([
         element: <ShoppingPage />,
       },
       {
-        path: "lazy2",
+        path: "customFormik",
         element: <LazyPage2 />,
       },
       {
