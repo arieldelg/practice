@@ -15,9 +15,8 @@ const ProductCard = ({
 }: ProductCardProps) => {
   const { counter, handleCounter } = useProduct({ onChange, product, value });
 
-  if (!className.includes("w-")) className = className + " w-64 rounded-md";
-  if (!className.includes("rounded-"))
-    className = className + " w-64 rounded-md";
+  if (!className.includes("w-")) className = className + " w-64";
+  if (!className.includes("rounded-")) className = className + " rounded-md";
   return (
     <Provider value={{ counter, handleCounter, product }}>
       <div className={`${className} ${styles.productCard}`}>{children}</div>

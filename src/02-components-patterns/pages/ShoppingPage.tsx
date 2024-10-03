@@ -1,4 +1,3 @@
-import { useState } from "react";
 import {
   ProductButtons,
   ProductCard,
@@ -6,40 +5,11 @@ import {
   ProductTitle,
 } from "../components";
 import styles from "../styles/styles.module.css";
-import { OnChangeProps, ProductsInfo } from "../interface/interfaces";
-
-const products1: ProductsInfo = {
-  img: "./coffee-mug.png",
-  title: "Coffe-Mug",
-  id: "1",
-};
-
-const products2: ProductsInfo = {
-  img: "./coffee-mug2.png",
-  title: "Coffe-Mug2",
-  id: "2",
-};
-
-const products: ProductsInfo[] = [products1, products2];
+import { products } from "../data/data";
+import useShoppingCart from "../hooks/useShoppingCart";
 
 const ShoppingPage = () => {
-  const [shoppingCart, setShoppingCart] = useState<{
-    [key: string]: OnChangeProps;
-  }>({});
-
-  const handleChange = (id: string, event: OnChangeProps) => {
-    if (event.count === 0 && shoppingCart) {
-      delete shoppingCart[id];
-      return setShoppingCart((prev) => ({
-        ...prev,
-      }));
-    }
-    setShoppingCart((prev) => ({
-      ...prev,
-      [id]: event,
-    }));
-  };
-
+  const { handleChange, shoppingCart } = useShoppingCart();
   return (
     <section>
       <h1>Shopping Page</h1>
