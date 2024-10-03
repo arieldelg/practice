@@ -11,8 +11,9 @@ const ProductCard = ({
   product,
   className = "w-64",
   onChange,
+  value,
 }: ProductCardProps) => {
-  const { counter, handleCounter } = useProduct({ onChange, product });
+  const { counter, handleCounter } = useProduct({ onChange, product, value });
 
   if (!className.includes("w-")) className = className + " w-64 rounded-md";
   if (!className.includes("rounded-"))

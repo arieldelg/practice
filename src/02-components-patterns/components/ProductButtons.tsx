@@ -3,7 +3,7 @@ import { ProductContext } from "./ProductCard";
 import styles from "../styles/styles.module.css";
 
 const ProductButtons = ({ className }: { className?: string }) => {
-  const { counter, handleCounter } = useContext(ProductContext);
+  const { handleCounter, counter } = useContext(ProductContext);
   return (
     <div className={`${className} ${styles.buttonsContainer} after:bg-red-400`}>
       <button

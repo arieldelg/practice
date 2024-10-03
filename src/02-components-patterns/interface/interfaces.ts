@@ -3,6 +3,7 @@ export interface ProductCardProps {
   product: ProductsInfo;
   className?: string;
   onChange?: (value: OnChangeProps) => void;
+  value?: number;
 }
 
 export interface OnChangeProps {

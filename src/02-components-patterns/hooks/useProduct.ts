@@ -1,19 +1,21 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { OnChangeProps, ProductsInfo } from "../interface/interfaces";
 
 interface Props {
   onChange?: (value: OnChangeProps) => void;
   product: ProductsInfo;
+  value?: number;
 }
 
 const useProduct = ({
   onChange,
   product,
+  value = 0,
 }: Props): {
   counter: number;
   handleCounter: (type: string) => void;
 } => {
-  const [counter, setCounter] = useState<number>(0);
+  const [counter, setCounter] = useState<number>(value);
 
   const handleCounter = (type: string) => {
     switch (type) {
@@ -31,6 +33,10 @@ const useProduct = ({
         break;
     }
   };
+
+  useEffect(() => {
+    setCounter(value);
+  }, [value]);
 
   return {
     handleCounter,

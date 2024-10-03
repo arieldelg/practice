@@ -58,13 +58,13 @@ const ShoppingPage = () => {
             product={product}
             className="bg-gray-700 ring-white ring-2 h-[22rem] flex flex-col justify-between"
             onChange={(event) => handleChange(product.id, event)}
+            value={shoppingCart[product.id]?.count}
           >
             <ProductImg className="h-3/4 w-full" />
             <ProductTitle className="text-white" />
             <ProductButtons className="text-white flex flex-row pb-2 px-2" />
           </ProductCard>
         ))}
-        {/* method 2 */}
       </div>
 
       <div className="absolute top-8 right-4 flex flex-col items-center gap-2">
@@ -73,7 +73,8 @@ const ShoppingPage = () => {
             key={key}
             product={product.product}
             className="bg-gray-700 w-24 h-32 flex flex-col justify-between ring-2 ring-white"
-            onChange={(event) => handleChange(products1.id, event)}
+            onChange={(event) => handleChange(product.product.id, event)}
+            value={product.count}
           >
             <ProductImg className={`w-full h-2/4 ${styles.image}`} />
             <ProductButtons className="text-white flex flex-row justify-center w-full h-auto pb-2" />
