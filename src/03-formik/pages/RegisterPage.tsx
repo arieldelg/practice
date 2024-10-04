@@ -1,7 +1,8 @@
 import useForm from "../hooks/useForm";
 
 const RegisterPage = () => {
-  const { handleSumbit } = useForm();
+  const { handleSumbit, error } = useForm();
+  console.log(error);
   return (
     <div className="space-y-4">
       <h1 className="text-5xl font-mono font-bold ">Register Page</h1>
