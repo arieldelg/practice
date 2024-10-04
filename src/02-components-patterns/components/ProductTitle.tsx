@@ -12,8 +12,8 @@ const ProductTitle = ({
   const { product } = useContext(ProductContext);
   let titleContext;
 
-  if (product.title) titleContext = product.title;
-  else titleContext = title;
+  if (title) titleContext = title;
+  else titleContext = product.title;
 
   return (
     <span className={`${className} ${styles.productDescription}`}>

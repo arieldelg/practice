@@ -55,3 +55,9 @@ nav li a {
   color: grey;
   transition: all 0.3s ease-out;
 }
+
+@layer components {
+  .button_span {
+    @apply text-white bg-gray-500 h-8 w-8  flex flex-col items-center justify-center;
+  }
+}

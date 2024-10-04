@@ -1,11 +1,8 @@
 .productCard {
-  /* border-radius: 15px; */
   color: black;
   padding-bottom: 5px;
-  /* width: 250px; */
   margin-right: 5px;
   margin-top: 5px;
-  /* background-color: white; */
 }
 
 .productDescription {
@@ -14,7 +11,6 @@
 
 .buttonMinus {
   cursor: pointer;
-  /* background-color: transparent; */
   border: 1px solid black;
   border-radius: 5px 0px 0px 5px;
   font-size: 20px;

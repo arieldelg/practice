@@ -1,48 +1,53 @@
 import { useEffect, useState } from "react";
-import { OnChangeProps, ProductsInfo } from "../interface/interfaces";
-
-interface Props {
-  onChange?: (value: OnChangeProps) => void;
-  product: ProductsInfo;
-  value?: number;
-}
+import { HandlerCounterProps, UseProductProps } from "../interface/interfaces";
 
 const useProduct = ({
-  onChange,
-  product,
   value = 0,
-}: Props): {
+  initialValues,
+}: UseProductProps): {
   counter: number;
-  handleCounter: (type: string) => void;
+  handleCounter: ({ type, value }: HandlerCounterProps) => void;
+  maxCount: number;
+  isMax: boolean;
+  reset: () => void;
+  isMin: boolean;
 } => {
-  const [counter, setCounter] = useState<number>(value);
+  const [counter, setCounter] = useState<number>(initialValues.count || value);
 
-  const handleCounter = (type: string) => {
+  const handleCounter = ({ type, value = 1 }: HandlerCounterProps) => {
     switch (type) {
       case "add":
-        setCounter(Math.max(counter + 1, 0));
-        if (counter + 1 < 0) return;
+        if (counter + value > initialValues.maxCount!)
+          return setCounter(Math.min(counter + value, initialValues.maxCount!));
 
-        if (onChange) onChange({ product, count: Math.max(counter + 1, 0) });
+        setCounter(Math.max(counter + value, 0));
+        if (counter + 1 < 0) return;
         break;
       case "minus":
-        setCounter(Math.max(counter - 1, 0));
+        console.log(counter + value);
+        setCounter(Math.max(counter - value, 0));
         if (counter - 1 < 0) return;
-
-        if (onChange) onChange({ product, count: Math.max(counter - 1, 0) });
         break;
       default:
         break;
     }
   };
 
+  const reset = () => {
+    setCounter(initialValues.count || value || 0);
+  };
+
   useEffect(() => {
-    setCounter(value);
-  }, [value]);
+    setCounter(initialValues.count || value);
+  }, [initialValues, value]);
 
   return {
     handleCounter,
     counter,
+    maxCount: initialValues.maxCount!,
+    isMax: counter === initialValues.maxCount ? true : false,
+    isMin: counter === 0 ? true : false,
+    reset,
   };
 };
 
