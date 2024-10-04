@@ -7,6 +7,7 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import Root from "./routes/Root";
+import RegisterPage from "./03-formik/pages/RegisterPage";
 
 const router = createBrowserRouter([
   {
@@ -15,7 +16,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: "formik",
-        element: <p>Forms</p>,
+        element: <RegisterPage />,
       },
     ],
   },

@@ -55,3 +55,9 @@ nav li a {
   color: grey;
   transition: all 0.3s ease-out;
 }
+
+@layer components {
+  .inputAuth {
+    @apply h-10 px-2 rounded-md focus:outline-none focus:ring-blue-400 focus:ring-2 text-black;
+  }
+}
