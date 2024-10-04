@@ -27,8 +27,6 @@ code {
 nav {
   background-color: #363a45;
   height: 100vh;
-  margin-right: 15px;
-  /* overflow-y: scroll; */
   text-align: center;
   width: 250px;
 }
@@ -59,5 +57,14 @@ nav li a {
 @layer components {
   .inputAuth {
     @apply h-10 px-2 rounded-md focus:outline-none focus:ring-blue-400 focus:ring-2 text-black;
+  }
+  .inputAuthContainer {
+    @apply flex flex-col h-24;
+  }
+  .labelAuth {
+    @apply text-black text-xl tracking-wider;
+  }
+  .errorInputForm {
+    @apply text-red-700 text-sm pt-2;
   }
 }

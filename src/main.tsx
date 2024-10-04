@@ -8,6 +8,7 @@ import {
 } from "react-router-dom";
 import Root from "./routes/Root";
 import RegisterPage from "./03-formik/pages/RegisterPage";
+import FormikBasicPage from "./03-formik/pages/FormikBasicPage";
 
 const router = createBrowserRouter([
   {
@@ -15,8 +16,12 @@ const router = createBrowserRouter([
     element: <Root />,
     children: [
       {
-        path: "formik",
+        path: "normal_form",
         element: <RegisterPage />,
+      },
+      {
+        path: "formik",
+        element: <FormikBasicPage />,
       },
     ],
   },
