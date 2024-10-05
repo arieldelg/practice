@@ -1,4 +1,4 @@
-import { useField } from "formik";
+import { ErrorMessage, useField } from "formik";
 
 interface MyTextInputsProps {
   label: string;
@@ -20,16 +20,18 @@ const MyTextInput = ({
   classNameLabel,
   ...props
 }: MyTextInputsProps) => {
-  const [field, meta] = useField(props);
+  const [field] = useField(props);
   return (
     <>
       <label htmlFor={props.name} className={classNameLabel}>
         {label}
       </label>
       <input className={classNameInput} {...field} {...props} />
-      {meta.touched && meta.error && (
-        <span className={classNameError}>{meta.error}</span>
-      )}
+      <ErrorMessage
+        className={classNameError}
+        component="span"
+        name={props.name}
+      />
     </>
   );
 };
