@@ -9,6 +9,9 @@ import {
 import Root from "./routes/Root";
 import RegisterPage from "./03-formik/pages/RegisterPage";
 import FormikBasicPage from "./03-formik/pages/FormikBasicPage";
+import FormikYupPage from "./03-formik/pages/FormikYupPage";
+import FormikComponents from "./03-formik/pages/FormikComponents";
+import FormikAbstract from "./03-formik/pages/FormikAbstract";
 
 const router = createBrowserRouter([
   {
@@ -22,6 +25,18 @@ const router = createBrowserRouter([
       {
         path: "formik",
         element: <FormikBasicPage />,
+      },
+      {
+        path: "formik-yup",
+        element: <FormikYupPage />,
+      },
+      {
+        path: "formik-components",
+        element: <FormikComponents />,
+      },
+      {
+        path: "formik-abstract",
+        element: <FormikAbstract />,
       },
     ],
   },

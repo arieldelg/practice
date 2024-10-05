@@ -14,21 +14,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
-}
-
-.main-layout {
-  display: flex;
-  flex-direction: row;
-}
-
 nav {
   background-color: #363a45;
   height: 100vh;
   text-align: center;
-  width: 250px;
 }
 nav ul {
   align-items: center;
@@ -56,15 +45,18 @@ nav li a {
 
 @layer components {
   .inputAuth {
-    @apply h-10 px-2 rounded-md focus:outline-none focus:ring-blue-400 focus:ring-2 text-black;
+    @apply h-10 px-2 rounded-md focus:outline-none focus:ring-blue-400 focus:ring-2 text-black flex-none;
   }
   .inputAuthContainer {
-    @apply flex flex-col h-24;
+    @apply flex flex-col md:h-28 lg:h-24 h-32 space-y-2;
   }
   .labelAuth {
     @apply text-black text-xl tracking-wider;
   }
   .errorInputForm {
-    @apply text-red-700 text-sm pt-2;
+    @apply text-red-800 text-sm pt-1;
+  }
+  .terms {
+    @apply h-5 w-5;
   }
 }
