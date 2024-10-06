@@ -59,4 +59,10 @@ nav li a {
   .terms {
     @apply h-5 w-5;
   }
+  .Form {
+    @apply space-y-4 bg-slate-400 p-4 rounded-md ring-2 ring-teal-300 w-1/2 h-auto lg:max-w-xl;
+  }
+  .ButtonSaveForm {
+    @apply bg-green-200 w-full h-10 rounded-full ring-2 ring-green-400 hover:bg-green-400 hover:ring-green-500 text-xl text-black;
+  }
 }

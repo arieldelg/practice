@@ -7,10 +7,12 @@ import {
 } from "react-router-dom";
 import Root from "./routes/Root";
 import {
+  DynamicFormik,
   FormikAbstract,
   FormikBasicPage,
   FormikComponents,
   FormikYupPage,
+  RegisterFormik,
   RegisterPage,
 } from "./03-formik/pages";
 import "./index.css";
@@ -39,6 +41,14 @@ const router = createBrowserRouter([
       {
         path: "formik-abstract",
         element: <FormikAbstract />,
+      },
+      {
+        path: "formik-register",
+        element: <RegisterFormik />,
+      },
+      {
+        path: "formik-dynamic",
+        element: <DynamicFormik />,
       },
     ],
   },

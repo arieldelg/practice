@@ -1,0 +1,104 @@
+[
+  {
+    "name": "userName",
+    "type": "text",
+    "placeholder": "name",
+    "label": "User Name",
+    "value": "",
+    "onBlur": null,
+    "validations": [
+      {
+        "type": "string"
+      },
+      {
+        "type": "required"
+      },
+      {
+        "type": "max"
+      },
+      {
+        "type": "min"
+      }
+    ]
+  },
+  {
+    "name": "lastName",
+    "type": "text",
+    "placeholder": "last name",
+    "label": "Last Name",
+    "value": "",
+    "validations": [
+      {
+        "type": "string"
+      },
+      {
+        "type": "required"
+      }
+    ]
+  },
+  {
+    "name": "email",
+    "type": "email",
+    "placeholder": "example@email.com",
+    "label": "Email",
+    "value": "",
+    "validations": [
+      {
+        "type": "string"
+      },
+      {
+        "type": "required"
+      },
+      {
+        "type": "email"
+      }
+    ]
+  },
+  {
+    "name": "password",
+    "type": "password",
+    "placeholder": "password",
+    "label": "Password",
+    "value": "",
+    "autoComplete": "off",
+    "validations": [
+      {
+        "type": "string"
+      },
+      {
+        "type": "required"
+      },
+      {
+        "type": "min"
+      }
+    ]
+  },
+  {
+    "name": "jobType",
+    "type": "select",
+    "label": "Job Type",
+    "value": "",
+    "options": [
+      {
+        "id": "1",
+        "value": "Batman"
+      },
+      {
+        "id": "2",
+        "value": "Superman"
+      },
+      {
+        "id": "3",
+        "value": "Flash"
+      }
+    ],
+    "validations": [
+      {
+        "type": "string"
+      },
+      {
+        "type": "required"
+      }
+    ]
+  }
+]

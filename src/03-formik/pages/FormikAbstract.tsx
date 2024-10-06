@@ -145,10 +145,7 @@ const FormikAbstract = () => {
               //* buttons send submit
             */}
 
-            <button
-              type="submit"
-              className="bg-green-200 w-full h-10 rounded-full ring-2 ring-green-400 hover:bg-green-400 hover:ring-green-500 text-xl text-black"
-            >
+            <button type="submit" className="ButtonSaveForm">
               Send
             </button>
           </Form>

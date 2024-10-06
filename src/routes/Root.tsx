@@ -79,6 +79,34 @@ const Root = () => {
               Formik Abstract
             </NavLink>
           </li>
+          <li className="w-full py-2 hover:bg-slate-500 rounded-xl hover:bg-opacity-50">
+            <NavLink
+              to={"formik-register"}
+              className={({ isActive, isPending }: NavLinkRenderProps) =>
+                isActive
+                  ? "nav-active"
+                  : isPending
+                  ? "nav-pending"
+                  : "inline-block w-full h-full"
+              }
+            >
+              Register Formik
+            </NavLink>
+          </li>
+          <li className="w-full py-2 hover:bg-slate-500 rounded-xl hover:bg-opacity-50">
+            <NavLink
+              to={"formik-dynamic"}
+              className={({ isActive, isPending }: NavLinkRenderProps) =>
+                isActive
+                  ? "nav-active"
+                  : isPending
+                  ? "nav-pending"
+                  : "inline-block w-full h-full"
+              }
+            >
+              Dynamic Formik
+            </NavLink>
+          </li>
         </ul>
       </nav>
       <div className="p-8 w-full h-100vh">
